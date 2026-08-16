@@ -1,0 +1,59 @@
+{
+  "_note": "ILLUSTRATIVE Phase 1 sample. Target 'LinearDeck' is a fictional competitor. Citations are placeholders showing where verified sources would attach. Not live-generated.",
+  "target": {
+    "type": "competitor",
+    "name": "LinearDeck",
+    "notes": "Template-based sales deck tool. Strong design library, weak on narrative consistency."
+  },
+  "positioning": "StoryNova is the Narrative OS that keeps every sales asset - battle cards, objection guides, and decks - telling one consistent, evidence-backed story.",
+  "personas": [
+    {
+      "role": "VP of Sales / Enablement",
+      "pains": ["Reps go off-message", "Assets contradict each other", "Slow to update after competitor moves"],
+      "desired_outcomes": ["Consistent messaging across the funnel", "Faster asset turnaround", "Higher win rates vs. named competitors"]
+    },
+    {
+      "role": "Product Marketing Manager",
+      "pains": ["Manually rebuilding the same story in 3 formats", "No single source of truth for positioning"],
+      "desired_outcomes": ["Write positioning once, project everywhere", "Auditable, cited claims"]
+    }
+  ],
+  "differentiators": [
+    {
+      "claim": "One canonical narrative spine powers every asset",
+      "proof_point": "Battle card, objection guide, and deck are all generated from the same schema, so messaging can never drift.",
+      "citation": "internal://architecture/README#core-idea"
+    },
+    {
+      "claim": "Every competitive claim is citation-gated",
+      "proof_point": "The Critic agent blocks any claim without a verifiable source before it ships.",
+      "citation": "internal://agents/orchestrator.py#evidence-gate"
+    },
+    {
+      "claim": "Objections grounded in real call + CRM data",
+      "proof_point": "Objection guide is built from actual Gong transcripts and closed-lost reasons, not generic lists.",
+      "citation": "crm://salesforce/closed-lost?window=90d"
+    }
+  ],
+  "competitor_weaknesses": [
+    { "weakness": "LinearDeck has no shared source of truth - decks and one-pagers drift apart", "citation": "review://g2.com/lineardeck?filter=messaging" },
+    { "weakness": "No automated fact-checking of competitive claims", "citation": "web://lineardeck.com/features" }
+  ],
+  "our_vulnerabilities": [
+    { "vulnerability": "Newer brand with a smaller design template library than LinearDeck", "reframe": "We optimize for message integrity and speed of update, not template count - and we import your existing brand kit." },
+    { "vulnerability": "Requires CRM/call-tool connection for full objection value", "reframe": "Works standalone on day one; connectors simply make objection handling sharper over time." }
+  ],
+  "story_arc": {
+    "problem": "Sales teams tell a different story in every asset, so buyers get mixed signals and reps lose deals they should win.",
+    "stakes": "Inconsistent messaging quietly erodes win rates and makes every competitive cycle slower.",
+    "solution": "StoryNova's Narrative OS generates battle cards, objection guides, and decks from one cited narrative spine.",
+    "proof": "One spine, three synchronized assets, every claim source-checked before it ships.",
+    "call_to_action": "Run your first competitor narrative in a 20-minute pilot."
+  },
+  "metadata": {
+    "version": "example-1.0",
+    "locked": true,
+    "generated_by": "narrative-agent (sample)"
+  }
+}
+
