@@ -1,0 +1,61 @@
+{
+  "_comment": "Phase 1 example MCP server config for the StoryNova Narrative OS Agent. Placeholders only - do NOT commit real secrets. Use environment variables.",
+  "mcpServers": {
+    "vector-store": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-qdrant"],
+      "env": { "QDRANT_URL": "${QDRANT_URL}", "QDRANT_API_KEY": "${QDRANT_API_KEY}" },
+      "purpose": "RAG backbone: past decks, win/loss notes, approved messaging, case studies"
+    },
+    "web-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": { "BRAVE_API_KEY": "${BRAVE_API_KEY}" },
+      "purpose": "Live competitor pages, pricing, reviews, news"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "purpose": "Fetch and read specific competitor/prospect URLs"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./data"],
+      "purpose": "Brand guidelines, prior artifacts, templates"
+    },
+    "crm-salesforce": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-salesforce"],
+      "env": { "SF_CLIENT_ID": "${SF_CLIENT_ID}", "SF_TOKEN": "${SF_TOKEN}" },
+      "purpose": "Real deal context, logged objections, personas, closed-lost reasons"
+    },
+    "call-intelligence-gong": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-gong"],
+      "env": { "GONG_ACCESS_KEY": "${GONG_ACCESS_KEY}" },
+      "purpose": "Mine real objections + competitor mentions from call transcripts"
+    },
+    "slides": {
+      "command": "python",
+      "args": ["-m", "mcp_server_pptx"],
+      "purpose": "Render pitch decks to .pptx / Google Slides"
+    },
+    "docs": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-notion"],
+      "env": { "NOTION_TOKEN": "${NOTION_TOKEN}" },
+      "purpose": "Publish battle cards and objection guides where reps look"
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "purpose": "Persist the canonical narrative spine + versioning"
+    },
+    "planning": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "purpose": "Structured multi-step reasoning for the orchestrator"
+    }
+  }
+}
+
