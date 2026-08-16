@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CanonicalNarrativeSchema",
+  "description": "Single source of truth (the narrative spine). Battle cards, objection guides, and pitch decks are all projections of this object. Phase 1 prototype.",
+  "type": "object",
+  "required": ["target", "positioning", "personas", "differentiators", "story_arc"],
+  "properties": {
+    "target": {
+      "type": "object",
+      "description": "Who/what this narrative is aimed at",
+      "properties": {
+        "type": { "type": "string", "enum": ["competitor", "prospect", "segment"] },
+        "name": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "positioning": {
+      "type": "string",
+      "description": "One-sentence positioning statement"
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": { "type": "string" },
+          "pains": { "type": "array", "items": { "type": "string" } },
+          "desired_outcomes": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "differentiators": {
+      "type": "array",
+      "description": "Top 3-5 reasons we win, each backed by a cited proof point",
+      "items": {
+        "type": "object",
+        "required": ["claim", "proof_point", "citation"],
+        "properties": {
+          "claim": { "type": "string" },
+          "proof_point": { "type": "string" },
+          "citation": { "type": "string", "description": "Source reference the Critic can verify" }
+        }
+      }
+    },
+    "competitor_weaknesses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "weakness": { "type": "string" },
+          "citation": { "type": "string" }
+        }
+      }
+    },
+    "our_vulnerabilities": {
+      "type": "array",
+      "description": "Honest gaps + how we reframe them (feeds objection handling)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "vulnerability": { "type": "string" },
+          "reframe": { "type": "string" }
+        }
+      }
+    },
+    "story_arc": {
+      "type": "object",
+      "description": "Drives pitch deck slide flow",
+      "properties": {
+        "problem": { "type": "string" },
+        "stakes": { "type": "string" },
+        "solution": { "type": "string" },
+        "proof": { "type": "string" },
+        "call_to_action": { "type": "string" }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "locked": { "type": "boolean", "description": "If true, generators must not alter messaging" },
+        "generated_by": { "type": "string" }
+      }
+    }
+  }
+}
+
