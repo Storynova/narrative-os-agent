@@ -1,0 +1,19 @@
+/* NarrativeOS Asset Library styles (Phase 1). Matches the dark NarrativeOS theme. */
+#asset-library { padding: 8px 4px; }
+.al-head, .al-empty { display:flex; align-items:baseline; gap:12px; }
+.al-head h2, .al-empty h2 { color:#a78bfa; font-size:28px; margin:0 0 12px; }
+.al-head span { color:#8b8ba7; font-size:14px; }
+.al-empty p { color:#8b8ba7; }
+.al-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-top:12px; }
+.al-card { background:#161627; border:1px solid #2a2a45; border-radius:14px; padding:16px; }
+.al-tag { display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:#c4b5fd; background:#2a2250; padding:4px 10px; border-radius:999px; margin-bottom:10px; }
+.al-card h3 { color:#e8e8f5; font-size:16px; margin:0 0 6px; }
+.al-date { color:#7a7a99; font-size:12px; margin-bottom:12px; }
+.al-actions { display:flex; gap:8px; }
+.al-actions button { flex:1; border:none; border-radius:8px; padding:8px; cursor:pointer; font-size:13px; }
+.al-actions button[data-act="view"] { background:linear-gradient(90deg,#7c3aed,#a855f7); color:#fff; }
+.al-actions button[data-act="delete"] { background:#241a2e; color:#c98; }
+.al-viewer { margin-top:20px; }
+.al-viewer-inner { background:#12121f; border:1px solid #2a2a45; border-radius:14px; padding:20px; color:#dcdcf0; }
+
